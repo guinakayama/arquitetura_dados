@@ -1,21 +1,78 @@
 
 version: 2
 
+sources:
+  - name: bronze
+    tables:
+      - name: br_ibge_municipio
+
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: create_silver
+    description: "Tabela de municipios do Brasil com fonte no IBGE"
+    config:
+      alias: br_ibge_municipio
+      contract:
+        enforced: true
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
+      - name: cod_regiao_ibge
+        description: "Código da região do IBGE"
+        data_type: string
+        data_tests: 
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
+      - name: nome_regiao_ibge
+        description: "Nome da região do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
+
+      - name: sigla_regiao_ibge
+        description: "Sigla da região do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
+
+      - name: cod_uf_ibge
+        description: "Código da unidade federativa do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
+
+      - name: nome_uf_ibge
+        description: "Nome da unidade federativa do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
+
+      - name: sigla_uf_ibge
+        description: "Sigla da unidade federativa do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
+
+      - name: cod_regiao_interna
+        description: "Código da região interna"
+        data_type: string
+
+      - name: nome_regiao_interna
+        description: "Nome da região interna"
+        data_type: string
+
+      - name: area_km2
+        description: "Área em quilômetros quadrados"
+        data_type: float
+        data_tests: 
+          - not_null
+
+      - name: cod_municipio_ibge
+        description: "Código do município do IBGE"
+        data_type: string
+        data_tests: 
+          - not_null
           - unique
+          
+      - name: nome_municipio_ibge
+        description: "Nome do município do IBGE"
+        data_type: string
+        data_tests: 
           - not_null
