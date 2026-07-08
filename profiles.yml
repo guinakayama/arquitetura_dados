@@ -1,0 +1,13 @@
+naka-arquitetura:
+  outputs:
+    dev:
+      type: duckdb
+      path: "md:naka_arquitetura?motherduck_token={{ env_var('TOKEN') }}"
+      threads: 4
+
+    prod:
+      type: duckdb
+      path: "md:naka_arquitetura?motherduck_token={{ env_var('TOKEN') }}"
+      threads: 4
+
+  target: prod
