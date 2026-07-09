@@ -1,9 +1,7 @@
 import dotenv , os
 from pathlib import Path
 
-caminho = Path(__file__).resolve().parent.parent.parent.parent / ".env"
-
-dotenv.load_dotenv(caminho)
+dotenv.load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 

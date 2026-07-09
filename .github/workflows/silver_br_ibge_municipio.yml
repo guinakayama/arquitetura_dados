@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TOKEN: ${{ secrets.TOKEN }}
-      DBT_PROFILES_DIR: ${{ github.workspace }}
+      DBT_PROFILES_DIR: pipelines/silver/br_ibge_municipio
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

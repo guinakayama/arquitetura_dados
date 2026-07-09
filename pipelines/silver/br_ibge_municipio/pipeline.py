@@ -1,7 +1,6 @@
 import tasks
 
 def br_ibge_municipio():
-    
     print('Downloading data...')
     tasks.download_data()
     
