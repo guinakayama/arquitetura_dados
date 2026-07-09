@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  br_ibge_municipio:
+    build:
+      context: ./pipelines/silver/br_ibge_municipio
+    env_file:
+      - .env
